@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { processCSVFile } from '@/utils/csvProcessor';
 import { PredictionData } from '@/types';
@@ -43,7 +42,7 @@ const Index = () => {
   };
   
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-background">
       <Header title="Trigeminal Neuralgia Predictor" />
       
       <main className="flex-1 container px-4 py-8 mx-auto">
@@ -52,7 +51,7 @@ const Index = () => {
             <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-4 animate-float">
               Advanced Neural Prediction
             </div>
-            <h2 className="text-3xl font-bold mb-4 animate-slide-up">
+            <h2 className="text-3xl font-bold mb-4 animate-slide-up text-primary">
               Predict Trigeminal Neuralgia from Patient Data
             </h2>
             <p className="text-muted-foreground max-w-lg mx-auto animate-fade-in">
@@ -61,11 +60,11 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="glass p-8 rounded-xl shadow-sm">
+          <div className="glass-morphism p-8 rounded-xl shadow-sm bg-secondary/30">
             <div className="grid md:grid-cols-2 gap-8">
               <div className="flex flex-col justify-center">
                 <div className="text-sm font-medium text-muted-foreground mb-2">Step 1</div>
-                <h3 className="text-xl font-semibold mb-4">Upload Patient Data</h3>
+                <h3 className="text-xl font-semibold mb-4 text-primary">Upload Patient Data</h3>
                 <p className="text-muted-foreground text-sm mb-6">
                   Upload a CSV file containing patient information. The file should include relevant 
                   clinical data such as demographics, symptoms, medical history, and diagnostic test results.
@@ -78,7 +77,7 @@ const Index = () => {
               
               <div>
                 <div className="text-sm font-medium text-muted-foreground mb-2">Step 2</div>
-                <h3 className="text-xl font-semibold mb-4">View Prediction Results</h3>
+                <h3 className="text-xl font-semibold mb-4 text-primary">View Prediction Results</h3>
                 
                 <PredictionResult 
                   isLoading={isProcessing}
@@ -87,10 +86,10 @@ const Index = () => {
                 />
                 
                 {!isProcessing && !result && !error && (
-                  <div className="bg-muted/40 rounded-xl p-8 text-center">
-                    <div className="w-16 h-16 rounded-full bg-muted/70 mx-auto flex items-center justify-center mb-4">
+                  <div className="bg-accent/40 rounded-xl p-8 text-center">
+                    <div className="w-16 h-16 rounded-full bg-accent/70 mx-auto flex items-center justify-center mb-4">
                       <svg 
-                        className="h-8 w-8 text-muted-foreground/70" 
+                        className="h-8 w-8 text-accent-foreground/70" 
                         xmlns="http://www.w3.org/2000/svg" 
                         viewBox="0 0 24 24" 
                         fill="none" 

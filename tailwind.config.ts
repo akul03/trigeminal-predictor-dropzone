@@ -1,50 +1,56 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
-	darkMode: ["class"],
-	content: [
-		"./pages/**/*.{ts,tsx}",
-		"./components/**/*.{ts,tsx}",
-		"./app/**/*.{ts,tsx}",
-		"./src/**/*.{ts,tsx}",
-	],
-	prefix: "",
-	theme: {
-		container: {
-			center: true,
-			padding: '2rem',
-			screens: {
-				'2xl': '1400px'
-			}
-		},
-		extend: {
-			colors: {
-				border: 'hsl(var(--border))',
+  darkMode: ["class"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
+  prefix: "",
+  theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
+    extend: {
+      colors: {
+        // Soft, calming color palette
+        primary: {
+          DEFAULT: '#7E69AB',    // Soft Purple
+          foreground: '#FFFFFF',
+          '50': '#E5DEFF',       // Very Light Purple
+          '100': '#D6BCFA',      // Light Lavender
+        },
+        secondary: {
+          DEFAULT: '#F2FCE2',    // Soft Green
+          foreground: '#403E43',
+        },
+        accent: {
+          DEFAULT: '#FEF7CD',    // Soft Yellow
+          foreground: '#403E43',
+        },
+        muted: {
+          DEFAULT: '#F1F0FB',    // Soft Gray
+          foreground: '#8E9196',
+        },
+        background: {
+          DEFAULT: '#FFFFFF',
+          foreground: '#403E43',
+        },
+        border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
-				background: 'hsl(var(--background))',
-				foreground: 'hsl(var(--foreground))',
-				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
-				},
-				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
-				},
+				
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))'
 				},
-				muted: {
-					DEFAULT: 'hsl(var(--muted))',
-					foreground: 'hsl(var(--muted-foreground))'
-				},
-				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
-				},
+				
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
 					foreground: 'hsl(var(--popover-foreground))'
@@ -63,8 +69,8 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
-			},
-			borderRadius: {
+      },
+      borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
@@ -125,7 +131,7 @@ export default {
 			backdropBlur: {
 				'xs': '2px'
 			}
-		}
-	},
-	plugins: [require("tailwindcss-animate")],
+    },
+  },
+  plugins: [require("tailwindcss-animate")],
 } satisfies Config;
